@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div class="form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Responsive Registration Form</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form action="/create" method="post" th:object="${accounts}" enctype="multipart/form-data">
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+            <input type="text" th:field="*{name}" required />
+          </div>
+          <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+            <input type="password" th:field="*{password}" required />
+          </div>
+          <div>
+            <input type="file" name="imgFile">
+          </div>
+
+          <div class="input_field select_option">
+            <select name="idRole">
+              <option>Select a role</option>
+              <option value="2">User</option>
+              <option value="1">Admin</option>
+            </select>
+            <div class="select_arrow"></div>
+          </div>
+          <input class="button" type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
